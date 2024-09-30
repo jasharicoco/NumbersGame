@@ -11,7 +11,7 @@
             while (guessingGame)
             {
                 Random randomized = new Random();
-                int gameNumber = randomized.Next(0, 21);
+                int gameNumber = randomized.Next(1, 21);
                 int numberOfGuesses = 0;
                 bool play = true;
 
@@ -36,7 +36,10 @@
                             numberOfGuesses++;
                             Console.WriteLine("\n\tGrattis, du gissade rätt!");
                             Console.WriteLine($"\tDu gissade rätt på {numberOfGuesses} försök.");
-                            if (numberOfGuesses < highScore) highScore = numberOfGuesses;
+                            if (numberOfGuesses < highScore)
+                            {
+                                highScore = numberOfGuesses;
+                            }
                             play = false;
                         }
                     }
